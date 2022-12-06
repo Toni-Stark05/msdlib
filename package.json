@@ -2,9 +2,14 @@
   "name": "msdlib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "msdlib.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon",
+    "build": "rimraf ./build && npx tsc",
+    "start": "npm run build && node build/main.js",
+    "lint": "npx eslint ./src/**",
+    "format": "npx eslint ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,16 @@
   "bugs": {
     "url": "https://github.com/Toni-Stark05/msdlib/issues"
   },
-  "homepage": "https://github.com/Toni-Stark05/msdlib#readme"
+  "homepage": "https://github.com/Toni-Stark05/msdlib#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "eslint": "^8.29.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
 }
